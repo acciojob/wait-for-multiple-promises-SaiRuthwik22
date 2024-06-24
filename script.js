@@ -2,9 +2,9 @@
 let table = document.getElementById("output")
 for (let i = 0; i < 2; i++) {
 	let tr = document.createElement("tr")
-	tr.id = "loading"
 	let td = document.createElement("td")
 	td.textContent = "Loading..."
+	td.id = "loading"
 	td.setAttribute("colspan",2)
 	tr.appendChild(td)
 	table.appendChild(tr)
