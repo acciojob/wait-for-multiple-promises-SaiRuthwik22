@@ -2,8 +2,7 @@
 let table = document.getElementById("output")
 table.innerHTML=`
 <tr id="loading">
-	<td>Loading...</td>
-	<td>Loading...</td>
+	<td colspan="2">Loading...</td>
 </tr>`
 function myPromises() {
     let startTime = Date.now();
