@@ -1,14 +1,10 @@
 //your JS code here. If required.
 let table = document.getElementById("output")
-for (let i = 0; i < 2; i++) {
-	let tr = document.createElement("tr")
-	let td = document.createElement("td")
-	td.textContent = "Loading..."
-	tr.id = "loading"
-	td.setAttribute("colspan",2)
-	tr.appendChild(td)
-	table.appendChild(tr)
-}
+table.innerHTML=`
+<tr id="loading">
+	<td>Loading...</td>
+	<td>Loading...</td>
+</tr>`
 function myPromises() {
     let startTime = Date.now();
 
@@ -27,24 +23,22 @@ let promises = [myPromises(), myPromises(), myPromises()];
 
 // use Promise.all to wait for all promises to resolve
 Promise.all(promises).then((times) => {
-	table.textContent = ""
-	times.map((element,index)=>{
-		let tr = document.createElement("tr")
-		let td1 = document.createElement("td")
-		let td2 = document.createElement("td")
-		td1.textContent = `Promise ${index+1}`
-		td2.textContent = Math.floor(element)
-		tr.appendChild(td1)
-		tr.appendChild(td2)
-		table.appendChild(tr)
-		
-	})
-	let tr = document.createElement("tr")
-	let td1 = document.createElement("td")
-	let td2 = document.createElement("td")
-	td1.textContent = "Total"
-	td2.textContent = (times[0]+times[1]+times[2]).toFixed(3)
-	tr.appendChild(td1)
-	tr.appendChild(td2)
-	table.appendChild(tr)
+	table.innerHTML=`
+	<tr>
+		<td>Promise 1</td>
+		<td>${Math.floor(times[0])}</td>
+	</tr>
+		<tr>
+		<td>Promise 2</td>
+		<td>${Math.floor(times[1])}</td>
+	</tr>
+		<tr>
+		<td>Promise 3</td>
+		<td>${Math.floor(times[2])}</td>
+	</tr>
+		<tr>
+		<td>Total</td>
+		<td>${(times[0]+times[1]+times[2]).toFixed(3)}</td>
+	</tr>
+	`
 });
