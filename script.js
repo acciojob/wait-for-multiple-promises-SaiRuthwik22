@@ -4,7 +4,7 @@ for (let i = 0; i < 2; i++) {
 	let tr = document.createElement("tr")
 	let td = document.createElement("td")
 	td.textContent = "Loading..."
-	td.id = "loading"
+	tr.id = "loading"
 	td.setAttribute("colspan",2)
 	tr.appendChild(td)
 	table.appendChild(tr)
