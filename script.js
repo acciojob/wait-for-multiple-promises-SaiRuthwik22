@@ -37,7 +37,7 @@ Promise.all(promises).then((times) => {
 	</tr>
 		<tr>
 		<td>Total</td>
-		<td>${(times[0]+times[1]+times[2]).toFixed(3)}</td>
+		<td>${times[0]+times[1]+times[2]}</td>
 	</tr>
 	`
 });
