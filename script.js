@@ -8,7 +8,7 @@ function myPromises() {
     let startTime = Date.now();
 
     return new Promise((resolve, reject) => {
-        let delay = Math.floor(Math.random() * 3000) + 1000;
+        let delay =1000;
         setTimeout(() => {
             let endTime = Date.now();
             let timeTaken = (endTime - startTime) / 1000; // convert to seconds
@@ -22,6 +22,7 @@ let promises = [myPromises(), myPromises(), myPromises()];
 
 // use Promise.all to wait for all promises to resolve
 Promise.all(promises).then((times) => {
+	table.innerHTML = ""
 	table.innerHTML=`
 	<tr>
 		<td>Promise 1</td>
