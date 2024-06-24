@@ -8,7 +8,7 @@ function myPromises() {
     let startTime = Date.now();
 
     return new Promise((resolve, reject) => {
-        let delay =1000;
+        let delay =Math.floor(Math.random() * 3000) + 1000;
         setTimeout(() => {
             let endTime = Date.now();
             let timeTaken = (endTime - startTime) / 1000; // convert to seconds
@@ -38,7 +38,7 @@ Promise.all(promises).then((times) => {
 	</tr>
 		<tr>
 		<td>Total</td>
-		<td>${times[0]+times[1]+times[2]}</td>
+		<td>${times[0]}</td>
 	</tr>
 	`
 });
