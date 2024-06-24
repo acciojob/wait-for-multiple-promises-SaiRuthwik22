@@ -21,7 +21,10 @@ function myPromises() {
 let promises = [myPromises(), myPromises(), myPromises()];
 
 // use Promise.all to wait for all promises to resolve
+const startTime = performance.now();
 Promise.all(promises).then((times) => {
+	  const endTime = performance.now();
+	  const timeTaken = (endTime - startTime)/1000;
 	table.innerHTML = ""
 	table.innerHTML=`
 	<tr>
@@ -38,7 +41,7 @@ Promise.all(promises).then((times) => {
 	</tr>
 		<tr>
 		<td>Total</td>
-		<td>${times[0]}</td>
+		<td>${timeTaken}</td>
 	</tr>
 	`
 });
